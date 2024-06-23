@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PickPictureView.swift
 //  PixArt
 //
 //  Created by Mariia Chemerys on 22.06.2024.
@@ -13,10 +13,9 @@ struct PickPictureView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Pick a Picture")
+                .font(.title)
+                .bold()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background{
