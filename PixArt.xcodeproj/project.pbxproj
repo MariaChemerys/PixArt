@@ -13,7 +13,9 @@
 		CC54CE782C26E15100A737D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC54CE772C26E15100A737D3 /* Preview Assets.xcassets */; };
 		CC98CFE42C28366200EC3254 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFE32C28366200EC3254 /* PictureModel.swift */; };
 		CC98CFE62C28367900EC3254 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFE52C28367900EC3254 /* PictureViewModel.swift */; };
-		CC98CFE82C283C2800EC3254 /* PictureCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFE72C283C2800EC3254 /* PictureCategoryView.swift */; };
+		CC98CFEA2C283F2000EC3254 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFE92C283F2000EC3254 /* CategoryModel.swift */; };
+		CC98CFEC2C283F3600EC3254 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFEB2C283F3600EC3254 /* CategoryViewModel.swift */; };
+		CC98CFF02C28408D00EC3254 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CFEF2C28408D00EC3254 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,9 @@
 		CC54CE772C26E15100A737D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC98CFE32C28366200EC3254 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		CC98CFE52C28367900EC3254 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
-		CC98CFE72C283C2800EC3254 /* PictureCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCategoryView.swift; sourceTree = "<group>"; };
+		CC98CFE92C283F2000EC3254 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		CC98CFEB2C283F3600EC3254 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		CC98CFEF2C28408D00EC3254 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				CC54CE702C26E15000A737D3 /* PixArtApp.swift */,
+				CC98CFED2C283F8B00EC3254 /* Picture */,
 				CC54CE722C26E15000A737D3 /* PickPictureView.swift */,
-				CC98CFE32C28366200EC3254 /* PictureModel.swift */,
-				CC98CFE52C28367900EC3254 /* PictureViewModel.swift */,
-				CC98CFE72C283C2800EC3254 /* PictureCategoryView.swift */,
+				CC98CFEE2C283F9F00EC3254 /* Category */,
 				CC54CE742C26E15100A737D3 /* Assets.xcassets */,
 				CC54CE762C26E15100A737D3 /* Preview Content */,
 			);
@@ -74,6 +77,25 @@
 				CC54CE772C26E15100A737D3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CC98CFED2C283F8B00EC3254 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				CC98CFE32C28366200EC3254 /* PictureModel.swift */,
+				CC98CFE52C28367900EC3254 /* PictureViewModel.swift */,
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
+		CC98CFEE2C283F9F00EC3254 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CC98CFE92C283F2000EC3254 /* CategoryModel.swift */,
+				CC98CFEB2C283F3600EC3254 /* CategoryViewModel.swift */,
+				CC98CFEF2C28408D00EC3254 /* CategoryView.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC98CFE42C28366200EC3254 /* PictureModel.swift in Sources */,
-				CC98CFE82C283C2800EC3254 /* PictureCategoryView.swift in Sources */,
+				CC98CFF02C28408D00EC3254 /* CategoryView.swift in Sources */,
+				CC98CFEA2C283F2000EC3254 /* CategoryModel.swift in Sources */,
 				CC98CFE62C28367900EC3254 /* PictureViewModel.swift in Sources */,
 				CC54CE732C26E15000A737D3 /* PickPictureView.swift in Sources */,
+				CC98CFEC2C283F3600EC3254 /* CategoryViewModel.swift in Sources */,
 				CC54CE712C26E15000A737D3 /* PixArtApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
