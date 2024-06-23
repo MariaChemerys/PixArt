@@ -7,9 +7,27 @@
 
 import SwiftUI
 
+
 struct CategoryView: View {
+    
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
+    
+    var pictureViewModel = PictureViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVGrid(columns: adaptiveColumns, spacing: 10) {
+            ForEach(pictureViewModel.pictures, id: \.self) { picture in
+                Button(action: {
+                    // Your action here
+                }) {
+                    Image("\(picture.name)")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                }
+            }
+        }
     }
 }
 
