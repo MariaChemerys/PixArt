@@ -9,29 +9,30 @@ import SwiftUI
 
 struct PickPictureView: View {
     
-    @State private var animateGradient: Bool = false
+    var categoryViewModel = CategoryViewModel()
     
     var body: some View {
-        VStack {
-            Text("Pick a Picture")
-                .font(.title)
-                .bold()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background{
-            LinearGradient(colors: [Color.cyan, Color.lightQuilt], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .hueRotation(.degrees(animateGradient ? 45 : 0))
-                .onAppear{
-                    withAnimation(.easeInOut(duration: 4).repeatForever(autoreverses: true)){
-                        animateGradient.toggle()
+        ZStack {
+            AnimatedBackgroundView()
+            
+            ScrollView {
+                VStack(spacing: 20) {
+                    Text("Pick a Picture")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    ForEach(categoryViewModel.categories, id: \.self) { category in
+                        CategoryView(categoryName: category.name)
                     }
                 }
+//                .padding(.vertical, 80)
+            }
         }
-        .ignoresSafeArea()
-        
+        .frame(maxWidth: .infinity)
     }
 }
 
 #Preview {
     PickPictureView()
 }
+

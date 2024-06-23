@@ -9,8 +9,8 @@ import Foundation
 
 class CategoryViewModel {
     var categories = [
-        Category(name: "transport"),
-        Category(name: "animal"),
-        Category(name: "nature")
+        Category(name: "Transport"),
+        Category(name: "Animals"),
+        Category(name: "Nature")
     ]
 }

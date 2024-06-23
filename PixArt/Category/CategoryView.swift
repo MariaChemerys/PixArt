@@ -7,30 +7,47 @@
 
 import SwiftUI
 
-
 struct CategoryView: View {
     
+    var categoryName: String
+    
     private let adaptiveColumns = [
-        GridItem(.adaptive(minimum: 150))
+        GridItem(.adaptive(minimum: 95), spacing: 5)
     ]
     
     var pictureViewModel = PictureViewModel()
     
     var body: some View {
-        LazyVGrid(columns: adaptiveColumns, spacing: 10) {
-            ForEach(pictureViewModel.pictures, id: \.self) { picture in
-                Button(action: {
-                    // Your action here
-                }) {
-                    Image("\(picture.name)")
-                        .resizable()
-                        .frame(width: 150, height: 150)
+        VStack {
+            Text(categoryName)
+                .font(.title)
+                .fontWeight(.semibold)
+//                .frame(width: 300)
+                .padding()
+            
+            let categoryPictures = pictureViewModel.pictures.filter { $0.category == categoryName }
+            
+            if !categoryPictures.isEmpty {
+                LazyVGrid(columns: adaptiveColumns, spacing: 10) {
+                    ForEach(categoryPictures, id: \.self) { picture in
+                        Button(action: {
+                            // Your action here
+                        }) {
+                            Image("\(picture.name)")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(15)
+                        }
+                    }
                 }
+                .frame(width: 360)
             }
         }
+        .background(.thinMaterial)
+        .cornerRadius(10)
     }
 }
 
 #Preview {
-    CategoryView()
+    PickPictureView()
 }

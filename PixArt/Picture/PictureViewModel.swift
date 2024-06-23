@@ -7,19 +7,19 @@
 
 import Foundation
 
-class PictureViewModel{
-    var pictures=[
-    Picture(name: "penguin", category: "animal"),
-    Picture(name: "boat", category: "transport"),
-    Picture(name: "solar system", category: "nature"),
-    Picture(name: "raspberry", category: "nature"),
-    Picture(name: "rocket", category: "transport"),
-    Picture(name: "panda", category: "transport"),
-    Picture(name: "tyrannosaurus", category: "animal"),
-    Picture(name: "UFO", category: "transport"),
-    Picture(name: "volcano", category: "nature"),
-    Picture(name: "hedgehog", category: "animal"),
-    Picture(name: "parrot", category: "animal"),
-    Picture(name: "beaver", category: "animal")
+class PictureViewModel {
+    var pictures = [
+        Picture(name: "boat", category: "Transport"),
+        Picture(name: "rocket", category: "Transport"),
+        Picture(name: "UFO", category: "Transport"),
+        Picture(name: "penguin", category: "Animals"),
+        Picture(name: "panda", category: "Animals"),
+        Picture(name: "tyrannosaurus", category: "Animals"),
+        Picture(name: "hedgehog", category: "Animals"),
+        Picture(name: "parrot", category: "Animals"),
+        Picture(name: "beaver", category: "Animals"),
+        Picture(name: "volcano", category: "Nature"),
+        Picture(name: "solar system", category: "Nature"),
+        Picture(name: "raspberry", category: "Nature"),
     ]
 }
