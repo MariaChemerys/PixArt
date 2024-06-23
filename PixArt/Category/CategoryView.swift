@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryView: View {
     
     var categoryName: String
+    var categorySfSymbol: String
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 95), spacing: 5)
@@ -19,11 +20,17 @@ struct CategoryView: View {
     
     var body: some View {
         VStack {
-            Text(categoryName)
-                .font(.title)
-                .fontWeight(.semibold)
-//                .frame(width: 300)
-                .padding()
+            HStack {
+                Image(systemName: categorySfSymbol)
+                    .font(.largeTitle)
+                
+                Text(categoryName)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    
+            }
+            .frame(maxWidth: 300, alignment: .leading)
+            .padding()
             
             let categoryPictures = pictureViewModel.pictures.filter { $0.category == categoryName }
             
@@ -40,7 +47,9 @@ struct CategoryView: View {
                         }
                     }
                 }
-                .frame(width: 360)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 11)
+                .frame(width: 350)
             }
         }
         .background(.thinMaterial)
