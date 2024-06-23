@@ -11,7 +11,7 @@ import SwiftUI
 struct PixArtApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PickPictureView()
         }
     }
 }

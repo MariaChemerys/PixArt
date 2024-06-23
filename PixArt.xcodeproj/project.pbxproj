@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC54CE712C26E15000A737D3 /* PixArtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54CE702C26E15000A737D3 /* PixArtApp.swift */; };
-		CC54CE732C26E15000A737D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54CE722C26E15000A737D3 /* ContentView.swift */; };
+		CC54CE732C26E15000A737D3 /* PickPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54CE722C26E15000A737D3 /* PickPictureView.swift */; };
 		CC54CE752C26E15100A737D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC54CE742C26E15100A737D3 /* Assets.xcassets */; };
 		CC54CE782C26E15100A737D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC54CE772C26E15100A737D3 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		CC54CE6D2C26E15000A737D3 /* PixArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC54CE702C26E15000A737D3 /* PixArtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixArtApp.swift; sourceTree = "<group>"; };
-		CC54CE722C26E15000A737D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CC54CE722C26E15000A737D3 /* PickPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPictureView.swift; sourceTree = "<group>"; };
 		CC54CE742C26E15100A737D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC54CE772C26E15100A737D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				CC54CE702C26E15000A737D3 /* PixArtApp.swift */,
-				CC54CE722C26E15000A737D3 /* ContentView.swift */,
+				CC54CE722C26E15000A737D3 /* PickPictureView.swift */,
 				CC54CE742C26E15100A737D3 /* Assets.xcassets */,
 				CC54CE762C26E15100A737D3 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC54CE732C26E15000A737D3 /* ContentView.swift in Sources */,
+				CC54CE732C26E15000A737D3 /* PickPictureView.swift in Sources */,
 				CC54CE712C26E15000A737D3 /* PixArtApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
