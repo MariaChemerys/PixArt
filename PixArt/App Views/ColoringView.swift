@@ -14,21 +14,26 @@ struct ColoringView: View {
     
     var body: some View {
         
-        VStack {
-            Button(action: {
-                withAnimation(.easeInOut(duration: 1.0)){
-                    self.currentScreen = .pickPicture
+        ZStack {
+            AnimatedBackgroundView(firstColor: chosenPicture.firstDominantColor, secondColor: chosenPicture.secondDominantColor)
+            
+            VStack {
+                Button(action: {
+                    withAnimation(.easeInOut(duration: 1.0)){
+                        self.currentScreen = .pickPicture
+                    }
+                })
+                {
+                    Image(systemName: "arrow.left")
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
                 }
-            })
-            {
-                Image(systemName: "arrow.left")
-                    .font(.largeTitle)
+                Text(chosenPicture.name)
             }
-            Text(chosenPicture.name)
         }
     }
 }
 
 #Preview {
-    ColoringView(currentScreen: .constant(.coloring), chosenPicture: .constant(Picture(name: "panda", category: "Animals")))
+    ColoringView(currentScreen: .constant(.coloring), chosenPicture: .constant(Picture(name: "panda", category: "Animals", firstDominantColor: .cyan, secondDominantColor: .green)))
 }

@@ -15,7 +15,7 @@ struct PickPictureView: View {
     
     var body: some View {
         ZStack {
-            AnimatedBackgroundView()
+            AnimatedBackgroundView(firstColor: .cyan, secondColor: .lightQuilt)
             
             ScrollView {
                 VStack(spacing: 10) {

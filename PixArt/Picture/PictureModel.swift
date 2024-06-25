@@ -12,6 +12,8 @@ struct Picture: Identifiable, Hashable{
     var id: UUID = UUID()
     var name: String
     var category: String
+    var firstDominantColor: Color
+    var secondDominantColor: Color
     
     // Conform to Hashable
     func hash(into hasher: inout Hasher) {

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var currentScreen: Screen = .pickPicture
-    @State var chosenPicture: Picture = Picture(name: "panda", category: "Animals")
+    @State var chosenPicture: Picture = Picture(name: "panda", category: "Animals", firstDominantColor: .cyan, secondDominantColor: .green)
     
     var body: some View {
         
