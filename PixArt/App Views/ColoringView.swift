@@ -12,10 +12,22 @@ struct ColoringView: View {
     @Binding var currentScreen: Screen
     
     var body: some View {
-        Text("Hello")
+        
+        VStack {
+            Button(action: {
+                withAnimation(.easeInOut(duration: 1.0)){
+                    self.currentScreen = .pickPicture
+                }
+            })
+            {
+                Image(systemName: "arrow.left")
+                    .font(.largeTitle)
+            }
+            Text("Hello")
+        }
     }
 }
 
 #Preview {
-    PickPictureView(currentScreen: .constant(.coloring))
+    ColoringView(currentScreen: .constant(.coloring))
 }

@@ -39,8 +39,9 @@ struct CategoryView: View {
                 LazyVGrid(columns: adaptiveColumns, spacing: 10) {
                     ForEach(categoryPictures, id: \.self) { picture in
                         Button(action: {
-                            // Your action here
-                            self.currentScreen = .coloring
+                            withAnimation(.easeInOut(duration: 1.0)){
+                                self.currentScreen = .coloring
+                            }
                             
                         }) {
                             Image("\(picture.name)")
