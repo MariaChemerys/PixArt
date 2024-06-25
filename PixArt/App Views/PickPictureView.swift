@@ -27,7 +27,7 @@ struct PickPictureView: View {
                         .padding(.leading, 30)
                     
                     ForEach(categoryViewModel.categories, id: \.self) { category in
-                        CategoryView(currentScreen: $currentScreen, chosenPicture: $chosenPicture, categoryName: category.name, categorySfSymbol: category.sfSymbolName)
+                        CategoryView(currentScreen: $currentScreen, chosenPicture: $chosenPicture, category: category)
                     }
                 }
                 .padding(.top, 30)

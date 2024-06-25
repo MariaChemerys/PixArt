@@ -12,8 +12,7 @@ struct CategoryView: View {
     @Binding var currentScreen: Screen
     @Binding var chosenPicture: Picture
     
-    var categoryName: String
-    var categorySfSymbol: String
+    var category: Category
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 95), spacing: 5)
@@ -24,10 +23,10 @@ struct CategoryView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: categorySfSymbol)
+                Image(systemName: category.sfSymbolName)
                     .font(.largeTitle)
                 
-                Text(categoryName)
+                Text(category.name)
                     .font(.title)
                     .fontWeight(.semibold)
                     
@@ -35,7 +34,7 @@ struct CategoryView: View {
             .frame(maxWidth: 300, alignment: .leading)
             .padding(10)
             
-            let categoryPictures = pictureViewModel.pictures.filter { $0.category == categoryName }
+            let categoryPictures = pictureViewModel.pictures.filter { $0.category == category.name }
             
             if !categoryPictures.isEmpty {
                 LazyVGrid(columns: adaptiveColumns, spacing: 10) {
