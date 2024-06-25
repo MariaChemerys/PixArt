@@ -10,6 +10,7 @@ import SwiftUI
 struct ColoringView: View {
     
     @Binding var currentScreen: Screen
+    @Binding var chosenPicture: Picture
     
     var body: some View {
         
@@ -23,11 +24,11 @@ struct ColoringView: View {
                 Image(systemName: "arrow.left")
                     .font(.largeTitle)
             }
-            Text("Hello")
+            Text(chosenPicture.name)
         }
     }
 }
 
 #Preview {
-    ColoringView(currentScreen: .constant(.coloring))
+    ColoringView(currentScreen: .constant(.coloring), chosenPicture: .constant(Picture(name: "panda", category: "Animals")))
 }

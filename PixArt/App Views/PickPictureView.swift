@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PickPictureView: View {
     @Binding var currentScreen: Screen
+    @Binding var chosenPicture: Picture
+    
     var categoryViewModel = CategoryViewModel()
     
     var body: some View {
@@ -25,7 +27,7 @@ struct PickPictureView: View {
                         .padding(.leading, 30)
                     
                     ForEach(categoryViewModel.categories, id: \.self) { category in
-                        CategoryView(currentScreen: $currentScreen, categoryName: category.name, categorySfSymbol: category.sfSymbolName)
+                        CategoryView(currentScreen: $currentScreen, chosenPicture: $chosenPicture, categoryName: category.name, categorySfSymbol: category.sfSymbolName)
                     }
                 }
                 .padding(.top, 30)

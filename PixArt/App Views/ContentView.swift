@@ -10,14 +10,15 @@ import SwiftUI
 struct ContentView: View {
     
     @State var currentScreen: Screen = .pickPicture
+    @State var chosenPicture: Picture = Picture(name: "panda", category: "Animals")
     
     var body: some View {
         
         switch currentScreen {
         case .pickPicture:
-            PickPictureView(currentScreen: $currentScreen)
+            PickPictureView(currentScreen: $currentScreen, chosenPicture: $chosenPicture)
         case .coloring:
-            ColoringView(currentScreen: $currentScreen)
+            ColoringView(currentScreen: $currentScreen, chosenPicture: $chosenPicture)
         }
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 struct CategoryView: View {
     
     @Binding var currentScreen: Screen
+    @Binding var chosenPicture: Picture
+    
     var categoryName: String
     var categorySfSymbol: String
     
@@ -41,6 +43,7 @@ struct CategoryView: View {
                         Button(action: {
                             withAnimation(.easeInOut(duration: 1.0)){
                                 self.currentScreen = .coloring
+                                self.chosenPicture = picture
                             }
                             
                         }) {
