@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     
+    @Binding var currentScreen: Screen
     var categoryName: String
     var categorySfSymbol: String
     
@@ -30,7 +31,7 @@ struct CategoryView: View {
                     
             }
             .frame(maxWidth: 300, alignment: .leading)
-            .padding()
+            .padding(10)
             
             let categoryPictures = pictureViewModel.pictures.filter { $0.category == categoryName }
             
@@ -39,6 +40,8 @@ struct CategoryView: View {
                     ForEach(categoryPictures, id: \.self) { picture in
                         Button(action: {
                             // Your action here
+                            self.currentScreen = .coloring
+                            
                         }) {
                             Image("\(picture.name)")
                                 .resizable()
@@ -58,5 +61,5 @@ struct CategoryView: View {
 }
 
 #Preview {
-    PickPictureView()
+    ContentView()
 }

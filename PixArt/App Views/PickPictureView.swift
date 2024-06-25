@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PickPictureView: View {
-    
+    @Binding var currentScreen: Screen
     var categoryViewModel = CategoryViewModel()
     
     var body: some View {
@@ -21,14 +21,14 @@ struct PickPictureView: View {
                         .font(.largeTitle)
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 20)
                         .padding(.leading, 30)
                     
                     ForEach(categoryViewModel.categories, id: \.self) { category in
-                        CategoryView(categoryName: category.name, categorySfSymbol: category.sfSymbolName)
+                        CategoryView(currentScreen: $currentScreen, categoryName: category.name, categorySfSymbol: category.sfSymbolName)
                     }
                 }
-                .padding(.top, 20)
+                .padding(.top, 30)
             }
         }
         .frame(maxWidth: .infinity)
@@ -36,6 +36,6 @@ struct PickPictureView: View {
 }
 
 #Preview {
-    PickPictureView()
+    ContentView()
 }
 
