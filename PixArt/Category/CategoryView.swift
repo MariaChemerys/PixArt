@@ -44,7 +44,7 @@ struct CategoryView: View {
                                 self.currentScreen = .coloring
                                 self.chosenPicture = picture
                             }
-                            
+                            softHaptic()
                         }) {
                             Image("\(picture.name)")
                                 .resizable()

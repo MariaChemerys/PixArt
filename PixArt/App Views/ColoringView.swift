@@ -43,6 +43,7 @@ struct ColoringView: View {
                     withAnimation(.easeInOut(duration: 1.0)){
                         self.currentScreen = .pickPicture
                     }
+                    softHaptic()
                 })
                 {
                     Image(systemName: "arrow.left")
@@ -71,15 +72,16 @@ struct ColoringView: View {
                                     .onTapGesture {
                                         scaledButtonIndex = number
                                         chosenColorNumber = number
+                                        softHaptic()
                                     }
-                                    .scaleEffect(scaledButtonIndex == number ? 1.4 : 1.2)
+                                    .scaleEffect(scaledButtonIndex == number ? 1.5 : 1.2)
                                     
                             }
                             .contentShape(Circle())
                             .accessibility(addTraits: .isButton)
                         }
                     }
-                    .padding(20)
+                    .padding(25)
                   
                 }
               
