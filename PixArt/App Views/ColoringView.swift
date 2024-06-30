@@ -52,7 +52,6 @@ struct ColoringView: View {
                             .font(.largeTitle)
                             .foregroundColor(.black)
                     }
-                    Text(chosenPicture.name)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
