@@ -11,9 +11,9 @@ class PictureViewModel {
     var pictures = [
         Picture(name: "boat", category: "Transport", firstDominantColor: .cyan, secondDominantColor: .rosa),
         Picture(name: "rocket", category: "Transport", firstDominantColor: .blue, secondDominantColor: .rosa),
-        Picture(name: "UFO", category: "Transport", firstDominantColor: .rosa, secondDominantColor: .purple),
+        Picture(name: "UFO", category: "Transport", firstDominantColor: .lavender, secondDominantColor: .rosa),
         Picture(name: "penguin", category: "Animals", firstDominantColor: .cyan, secondDominantColor: .lightOrange),
-        Picture(name: "panda", category: "Animals", firstDominantColor: .cyan, secondDominantColor: .green),
+        Picture(name: "panda", category: "Animals", firstDominantColor: .green, secondDominantColor: .rosa),
         Picture(name: "tyrannosaurus", category: "Animals", firstDominantColor: .green, secondDominantColor: .rosa),
         Picture(name: "hedgehog", category: "Animals", firstDominantColor: .lightQuilt, secondDominantColor: .green),
         Picture(name: "parrot", category: "Animals", firstDominantColor: .cyan, secondDominantColor: .pineapple),
