@@ -11,10 +11,12 @@ struct PickPictureView: View {
     @Binding var currentScreen: Screen
     @Binding var chosenPicture: Picture
     
+    // View model variable to manage categories of pictures
     var categoryViewModel = CategoryViewModel()
     
     var body: some View {
         ZStack {
+            // Background with an animated gradient
             AnimatedBackgroundView(firstColor: .cyan, secondColor: .lightQuilt)
             
             ScrollView {
@@ -26,6 +28,7 @@ struct PickPictureView: View {
                         .padding(.bottom, 20)
                         .padding(.leading, 30)
                     
+                    // Loop through categories and display each
                     ForEach(categoryViewModel.categories, id: \.self) { category in
                         CategoryView(currentScreen: $currentScreen, chosenPicture: $chosenPicture, category: category)
                     }
@@ -40,4 +43,3 @@ struct PickPictureView: View {
 #Preview {
     ContentView()
 }
-
