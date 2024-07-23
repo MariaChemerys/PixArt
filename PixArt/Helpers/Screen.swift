@@ -7,6 +7,7 @@
 
 import Foundation
 
+// enum for switching between the app's views
 enum Screen{
     case pickPicture // PickPictureView
     case coloring // ColoringView

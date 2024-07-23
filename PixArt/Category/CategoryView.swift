@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View for displaying a category of pictures.
 struct CategoryView: View {
     
     @Binding var currentScreen: Screen
@@ -14,6 +15,7 @@ struct CategoryView: View {
     
     var category: Category
     
+    // Define the adaptive grid layout for the pictures.
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 95), spacing: 5)
     ]
@@ -22,6 +24,7 @@ struct CategoryView: View {
     
     var body: some View {
         VStack {
+            // Display the category symbol and name.
             HStack {
                 Image(systemName: category.sfSymbolName)
                     .font(.largeTitle)
@@ -34,6 +37,7 @@ struct CategoryView: View {
             .frame(maxWidth: 300, alignment: .leading)
             .padding(10)
             
+            // Filter pictures based on the current category.
             let categoryPictures = pictureViewModel.pictures.filter { $0.category == category.name }
             
             if !categoryPictures.isEmpty {

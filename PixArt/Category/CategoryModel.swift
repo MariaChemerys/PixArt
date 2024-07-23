@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Category of Pictures
 struct Category: Identifiable, Hashable {
     var id: UUID = UUID()
     var name: String
