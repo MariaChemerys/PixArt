@@ -8,20 +8,19 @@
 import Foundation
 import SwiftUI
 
-class ColoringState: ObservableObject{
+// ObservableObject class to manage the state of the coloring process
+class ColoringState: ObservableObject {
     
-// GETTING NUMBERS OF SQUARES FROM THE TEXT FILE WITH NUMBERED GRIDS
-    
+    // Function to read lines from a specified text file
     func readLinesFromFile(fileName: String) -> [String] {
         let errorArray: [String] = Array(repeating: "error", count: 1)
-        if let filePath = Bundle.main.path(forResource: fileName, ofType: "txt"){
+        if let filePath = Bundle.main.path(forResource: fileName, ofType: "txt") {
             do {
                 // Read the contents of the file into a string
                 let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
                 
                 // Split the string into an array of lines
                 let trimmedInput = fileContents.trimmingCharacters(in: .whitespacesAndNewlines)
-
                 let lines = trimmedInput.components(separatedBy: "\n")
                 
                 return lines
@@ -30,25 +29,27 @@ class ColoringState: ObservableObject{
                 print("Error reading file: \(error)")
                 return errorArray
             }
-        }
-        else{
-            print("file not found")
+        } else {
+            // Handle case where the file is not found
+            print("File not found")
         }
         return errorArray
     }
     
-    func linesWithSquareNumbersToTwoDimensionalIntArray(lines: [String]) -> [[Int]]{
-        
-        // Split each row into columns and convert the string values to integers
+    // Function to convert lines with square numbers to a 2D integer array
+    func squareNumbersLinesTo2DIntArray(lines: [String]) -> [[Int]] {
+        // Get the dimensions of the board
         let boardHeight = getBoardHeight(arrayOfNumberedSquaresStrings: lines)
         let boardWidth = getBoardWidth(arrayOfNumberedSquaresStrings: lines)
+        
+        // Initialize a 2D array of strings
         var str2DArray = Array(repeating: Array(repeating: "", count: boardWidth), count: boardHeight)
-        var i=0
-        for currentLine in lines{
+        var i = 0
+        for currentLine in lines {
             var currentLineSeparated = currentLine.components(separatedBy: ",")
             currentLineSeparated.removeLast()
             str2DArray[i] = currentLineSeparated
-            i+=1
+            i += 1
         }
         
         // Convert the 2D string array to a 2D int array
@@ -59,7 +60,7 @@ class ColoringState: ObservableObject{
                     return intValue
                 } else {
                     // Handle cases where conversion fails (e.g., non-integer strings)
-                    return 584 // Default value
+                    return 100 // Default value
                 }
             }
         }
@@ -67,30 +68,32 @@ class ColoringState: ObservableObject{
         return intArray
     }
     
-// GETTING BOARD HEIGHT AND WIDTH
-    
-    func getBoardHeight(arrayOfNumberedSquaresStrings: [String]) -> Int{
+    // Function to get the board height from an array of numbered square strings
+    func getBoardHeight(arrayOfNumberedSquaresStrings: [String]) -> Int {
         let boardHeight = arrayOfNumberedSquaresStrings.count
         return boardHeight
     }
     
-    func getBoardWidth(arrayOfNumberedSquaresStrings: [String]) -> Int{
+    // Function to get the board width from an array of numbered square strings
+    func getBoardWidth(arrayOfNumberedSquaresStrings: [String]) -> Int {
         let squareNumbersInAString = arrayOfNumberedSquaresStrings[0].components(separatedBy: ",")
         let boardWidth = squareNumbersInAString.count - 1
         return boardWidth
     }
     
-    func getPresentColorsNumbers(squareNumbersInt2DArray: [[Int]]) -> [Int]{
+    // Function to get the numbers present in a 2D array of integers
+    func getPresentColorsNumbers(squareNumbersInt2DArray: [[Int]]) -> [Int] {
         let flattenedSet = Set(squareNumbersInt2DArray.flatMap { $0 })
-
-        // Convert the set back to an array
+        
+        // Convert the set back to an array and sort it
         let uniqueNumbers = Array(flattenedSet)
         let sortedUniqueNumbers = uniqueNumbers.sorted()
         return sortedUniqueNumbers
     }
     
-    func getColor(squareNumber: Int) -> Color{
-        switch(squareNumber){
+    // Function to get the color associated with a specific square number
+    func getColor(squareNumber: Int) -> Color {
+        switch squareNumber {
         case 0:
             return .white
         case 1:
@@ -143,15 +146,5 @@ class ColoringState: ObservableObject{
             return Color.cyan
         }
     }
-    
-    func isPictureColored(colorArray: [[Color]]) -> Bool {
-        for row in colorArray {
-            for color in row {
-                if color == .softGray {
-                    return false
-                }
-            }
-        }
-        return true
-    }
 }
+

@@ -32,7 +32,7 @@ struct ColoringView: View {
         
         let boardHeight = coloringState.getBoardHeight(arrayOfNumberedSquaresStrings: numberedSquaresStrings)
         
-        let numberedSquaresIntegers = coloringState.linesWithSquareNumbersToTwoDimensionalIntArray(lines: numberedSquaresStrings)
+        let numberedSquaresIntegers = coloringState.squareNumbersLinesTo2DIntArray(lines: numberedSquaresStrings)
         
         let numbersOfPresentColors = coloringState.getPresentColorsNumbers(squareNumbersInt2DArray: numberedSquaresIntegers)
         
